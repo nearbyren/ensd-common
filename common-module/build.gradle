@@ -1,0 +1,130 @@
+import ejiayou.composing.builds.AndroidX
+import ejiayou.composing.builds.Google
+import ejiayou.composing.builds.ThirdLib
+import ejiayou.composing.builds.Testing
+
+plugins {
+    id 'com.android.library'
+    id 'ejiayou.composing.builds'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'maven-publish'
+
+}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'ejiayou.common.module'
+                artifactId = 'common'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+android {
+    compileSdk 30
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+        //阿里路由
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    compileOnly fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api Testing.jUnit
+    api Testing.androidJunit
+    api Testing.espresso
+    api AndroidX.percent
+//    library重复依赖问题
+    api(AndroidX.appcompat) {
+        exclude module: "support-annotations"
+    }
+    api AndroidX.cardview
+    api Google.material
+    api AndroidX.support_compat
+//    library重复依赖问题
+    api(AndroidX.support_v13) {
+        exclude module: "support-annotations"
+    }
+    api AndroidX.lifecyle.lcy_ext
+    api AndroidX.navigation.fragmentKtx
+    api AndroidX.navigation.uiKtx
+    api AndroidX.navigation.kot_cor_and
+    api AndroidX.navigation.kot_cor_cor
+    api AndroidX.coordinatorlayout
+    api AndroidX.coreKtx
+    api AndroidX.multidex
+    api AndroidX.recyclerView
+    api AndroidX.exifinterface
+    api AndroidX.coordinatorlayout
+    api AndroidX.Navigation.kot_cor_cor
+    api ThirdLib.Logger.logger
+    api ThirdLib.Timber.timber
+    api ThirdLib.Rxjava.rxjava
+    api ThirdLib.Rxjava.rxandroid
+    api ThirdLib.Okhttp3.adapter_rxjava2
+    api ThirdLib.Smarttablayout.smarttablayout
+    api ThirdLib.Smarttablayout.smarttablayout_utils
+    api "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    api ThirdLib.Okhttp3.retrofit
+    api ThirdLib.Okhttp3.retrofit_converter_gson
+    api ThirdLib.Okhttp3.converter_calars
+    api ThirdLib.Okhttp3.adapter_rxjava2
+    api ThirdLib.Okhttp3.okhttp3
+    api ThirdLib.Lottie.lottie
+    api ThirdLib.Easypermissions.easypermissions
+    api ThirdLib.MmkvStatic.mmkvStatic
+    api ThirdLib.Relinker.relinker
+    implementation 'com.github.nearbyren:ensd-uikit:1.1.1'
+
+}
+
+configurations.all { //循环一个个的依赖库
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested //获取当前循环到的依赖库
+//        println("vale ="+requested)
+//        println("vale 2 ="+requested.name)
+        if (requested.group == 'com.android.support') {//如果这个依赖库群组的名字是com.android.support
+            if (!requested.name.startsWith("multidex")) { //且其名字不是以multidex开头的
+                details.useVersion '28.0.0'//这里指定需要统一的依赖版本
+            }
+        }
+        if (requested.group == 'androidx.annotation:annotation:1.0.0') {
+//如果这个依赖库群组的名字是com.android.support
+            details.useVersion '1.1.0'//这里指定需要统一的依赖版本
+        }
+    }
+}
