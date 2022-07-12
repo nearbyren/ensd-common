@@ -84,6 +84,9 @@ dependencies {
     api AndroidX.navigation.uiKtx
     api AndroidX.navigation.kot_cor_and
     api AndroidX.navigation.kot_cor_cor
+    api AndroidX.lifecycle_runtime_ktx
+    api ThirdLib.KotlinStdlib.kotlin_stdlib
+    api AndroidX.databinding_runtime
     api AndroidX.coordinatorlayout
     api AndroidX.coreKtx
     api AndroidX.multidex
