@@ -32,12 +32,6 @@ android {
         targetSdk 30
         versionCode 1
         versionName "1.0"
-        //阿里路由
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -62,31 +56,38 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.nearbyren:ensd-uikit:1.1.2'
+    implementation 'com.github.nearbyren:ensd-uikit:1.1.4'
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
-    implementation AndroidX.multidex
-    implementation AndroidX.coreKtx
-    implementation ThirdLib.KotlinStdlib.kotlinStdlib
-    implementation AndroidX.Navigation.kotCorAnd
-    implementation AndroidX.Lifecycle.lcyExt
-    implementation AndroidX.recyclerView
-    implementation AndroidX.exifinterface
-    implementation ThirdLib.MmkvStatic.mmkvStatic
-    implementation ThirdLib.Relinker.relinker
-    implementation ThirdLib.Easypermissions.easypermissions
-    implementation ThirdLib.Arouter.arouterApi
-    kapt ThirdLib.Arouter.arouterCompiler
-    implementation ThirdLib.Lottie.lottie
-    implementation Google.gson
-    implementation AndroidX.appcompat
-    implementation ThirdLib.Okhttp3.retrofit
-    implementation ThirdLib.Okhttp3.converterCalars
-    implementation ThirdLib.Okhttp3.retrofitConverterGson
-    implementation ThirdLib.Okhttp3.adapterRxjava
-    implementation ThirdLib.Okhttp3.adapterRxjava2
-    implementation ThirdLib.Okhttp3.okhttp3
+    api AndroidX.multidex
+    api AndroidX.coreKtx
+    api AndroidX.lifecycleRuntimeKtx
+    api ThirdLib.KotlinStdlib.kotlinStdlib
+    api AndroidX.Navigation.kotCorAnd
+    api AndroidX.Lifecycle.liveDataKtx
+    api AndroidX.Lifecycle.viewModelKtx
+    api AndroidX.Lifecycle.lcyExt
+    api AndroidX.recyclerView
+    api AndroidX.exifinterface
+    api ThirdLib.MmkvStatic.mmkvStatic
+    api ThirdLib.Relinker.relinker
+    api ThirdLib.Easypermissions.easypermissions
+//    api ThirdLib.Arouter.arouterApi
+//    kapt ThirdLib.Arouter.arouterCompiler
+    api ThirdLib.Lottie.lottie
+    api ThirdLib.Logger.logger
+    api ThirdLib.Timber.timber
+    api ThirdLib.Rxjava.rxandroid
+    api ThirdLib.Rxjava.rxbinding2
+    api Google.gson
+    api AndroidX.appcompat
+    api ThirdLib.Okhttp3.retrofit
+    api ThirdLib.Okhttp3.converterCalars
+    api ThirdLib.Okhttp3.retrofitConverterGson
+    api ThirdLib.Okhttp3.adapterRxjava
+    api ThirdLib.Okhttp3.adapterRxjava2
+    api ThirdLib.Okhttp3.okhttp3
 
 }
 
