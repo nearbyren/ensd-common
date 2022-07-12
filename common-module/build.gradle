@@ -9,6 +9,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'maven-publish'
+    id 'kotlin-kapt'
 
 }
 afterEvaluate {
@@ -40,9 +41,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
+
     dataBinding {
         enabled = true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -68,10 +71,7 @@ dependencies {
     api Testing.androidJunit
     api Testing.espresso
     api AndroidX.percent
-//    library重复依赖问题
-    api(AndroidX.appcompat) {
-        exclude module: "support-annotations"
-    }
+
     api AndroidX.cardview
     api Google.material
     api AndroidX.support_compat
@@ -82,13 +82,26 @@ dependencies {
     api AndroidX.lifecyle.lcy_ext
     api AndroidX.navigation.fragmentKtx
     api AndroidX.navigation.uiKtx
-    api AndroidX.navigation.kot_cor_and
     api AndroidX.navigation.kot_cor_cor
+
     api AndroidX.lifecycle_runtime_ktx
-    api ThirdLib.KotlinStdlib.kotlin_stdlib
+
     api AndroidX.databinding_runtime
     api AndroidX.coordinatorlayout
+
     api AndroidX.coreKtx
+//    library重复依赖问题
+    api(AndroidX.appcompat) {
+        exclude module: "support-annotations"
+    }
+    api ThirdLib.KotlinStdlib.kotlin_stdlib
+    api AndroidX.Navigation.kot_cor_and
+    api AndroidX.Lifecycle.lcy_ext
+    api AndroidX.Lifecycle.viewModelKtx
+    api ThirdLib.Lottie.lottie
+    api ThirdLib.Arouter.arouter_api
+
+
     api AndroidX.multidex
     api AndroidX.recyclerView
     api AndroidX.exifinterface
@@ -106,7 +119,6 @@ dependencies {
     api ThirdLib.Okhttp3.adapter_rxjava2
     api ThirdLib.Okhttp3.adapter_rxjava
     api ThirdLib.Okhttp3.okhttp3
-    api ThirdLib.Lottie.lottie
     api ThirdLib.Easypermissions.easypermissions
     api ThirdLib.MmkvStatic.mmkvStatic
     api ThirdLib.Relinker.relinker
