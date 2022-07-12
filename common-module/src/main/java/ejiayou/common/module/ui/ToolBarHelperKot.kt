@@ -13,7 +13,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.R
-import ejiayou.common.module.view.empty.PageStateLayout
 
 class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
 
@@ -36,7 +35,6 @@ class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
     var layout: Int = 0
     var parent: ViewGroup? = null
     var content: View? = null
-    var pageStateLayout: PageStateLayout? = null
     var statusBarType: Int = 0
 
 
@@ -78,66 +76,12 @@ class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
         var layout = 0
         var parent: ViewGroup? = null
         var content: View? = null
-        var pageStateLayout: PageStateLayout? = null
         var statusBarType = 0
 
         constructor() {}
         constructor(activity: BaseActivityKot) {
             //默认初始化方法
             this.activity = activity;
-        }
-
-        fun onLoading(): Builder {
-            Logger.d(if (pageStateLayout == null) "pageStateLayout - 1 " else "pageStateLayout - 2")
-            if (pageStateLayout != null) {
-                pageStateLayout!!.onLoading()
-            }
-            return this
-        }
-
-        fun onRequesting(): Builder {
-            if (pageStateLayout != null) {
-                pageStateLayout!!.onRequesting()
-            }
-            return this
-        }
-
-        fun onEmpty(): Builder {
-            if (pageStateLayout != null) {
-                pageStateLayout!!.onEmpty()
-            }
-            return this
-        }
-
-        fun onError(): Builder {
-            if (pageStateLayout != null) {
-                pageStateLayout!!.onError()
-            }
-            return this
-        }
-
-        fun onSucceed(): Builder {
-            if (pageStateLayout != null) {
-                pageStateLayout!!.onSucceed()
-            }
-            return this
-        }
-
-        fun setPageStateLayout(
-            parent: ViewGroup?,
-            content: View?,
-            pageStateLayout: PageStateLayout?
-        ): Builder {
-            this.parent = parent
-            this.content = content
-            this.pageStateLayout = pageStateLayout
-            return this
-        }
-
-        fun setPageStateLayout(layout: Int, pageStateLayout: PageStateLayout?): Builder {
-            this.layout = layout
-            this.pageStateLayout = pageStateLayout
-            return this
         }
 
         fun setOnBackListener(onBackListener: BaseActivityKot): Builder {
@@ -247,7 +191,6 @@ class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
         layout = builder.layout
         parent = builder.parent
         content = builder.content
-        pageStateLayout = builder.pageStateLayout
         statusBarType = builder.statusBarType
     }
 
@@ -278,16 +221,6 @@ class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
     }
 
     private fun isActivity() {
-        if (layout != 0) { //网络加载错误隐藏全屏幕布局
-            val stateview = LayoutInflater.from(activity).inflate(layout, null)
-            pageStateLayout!!.setOnEmptyListener { onEmptyListener!!.onEmptyClick() }
-                    .setOnErrorListener { onErrorListener!!.onOnErrorClick() }
-                    .load(activity!!, stateview)
-        } else { //指定被隐藏的布局
-            pageStateLayout?.setOnEmptyListener { onEmptyListener!!.onEmptyClick() }
-                    ?.setOnErrorListener { onErrorListener!!.onOnErrorClick() }
-                    ?.load(parent!!, content!!)
-        }
         val ensdToolbarId = activity!!.findViewById<View>(R.id.ensd_toolbar_id) as Toolbar
         if (ensdToolbarId != null) {
             ensdToolbarId.title = ""
