@@ -62,68 +62,31 @@ android {
 }
 
 dependencies {
-    compileOnly fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    api Testing.jUnit
-    api Testing.androidJunit
-    api Testing.espresso
-    api AndroidX.percent
-
-    api AndroidX.cardview
-    api Google.material
-    api AndroidX.support_compat
-//    library重复依赖问题
-    api(AndroidX.support_v13) {
-        exclude module: "support-annotations"
-    }
-    api AndroidX.lifecyle.lcy_ext
-    api AndroidX.navigation.fragmentKtx
-    api AndroidX.navigation.uiKtx
-    api AndroidX.navigation.kot_cor_cor
-
-    api AndroidX.lifecycle_runtime_ktx
-
-    api AndroidX.databinding_runtime
-    api AndroidX.coordinatorlayout
-
-    api AndroidX.coreKtx
-//    library重复依赖问题
-    api(AndroidX.appcompat) {
-        exclude module: "support-annotations"
-    }
-    api ThirdLib.KotlinStdlib.kotlin_stdlib
-    api AndroidX.Navigation.kot_cor_and
-    api AndroidX.Lifecycle.lcy_ext
-    api AndroidX.Lifecycle.viewModelKtx
-    api ThirdLib.Lottie.lottie
-    api ThirdLib.Arouter.arouter_api
-
-
-    api AndroidX.multidex
-    api AndroidX.recyclerView
-    api AndroidX.exifinterface
-    api AndroidX.coordinatorlayout
-    api AndroidX.Navigation.kot_cor_cor
-    api ThirdLib.Logger.logger
-    api ThirdLib.Timber.timber
-    api ThirdLib.Rxjava.rxjava
-    api ThirdLib.Rxjava.rxandroid
-    api ThirdLib.Smarttablayout.smarttablayout
-    api ThirdLib.Smarttablayout.smarttablayout_utils
-    api ThirdLib.Okhttp3.retrofit
-    api ThirdLib.Okhttp3.retrofit_converter_gson
-    api ThirdLib.Okhttp3.converter_calars
-    api ThirdLib.Okhttp3.adapter_rxjava2
-    api ThirdLib.Okhttp3.adapter_rxjava
-    api ThirdLib.Okhttp3.okhttp3
-    api ThirdLib.Easypermissions.easypermissions
-    api ThirdLib.MmkvStatic.mmkvStatic
-    api ThirdLib.Relinker.relinker
-
-    implementation 'com.github.nearbyren:ensd-uikit:1.1.1'
+    implementation 'com.github.nearbyren:ensd-uikit:1.1.2'
+    testImplementation Testing.jUnit
+    androidTestImplementation Testing.androidJunit
+    androidTestImplementation Testing.espresso
+    implementation AndroidX.multidex
+    implementation AndroidX.coreKtx
+    implementation ThirdLib.KotlinStdlib.kotlinStdlib
+    implementation AndroidX.Navigation.kotCorAnd
+    implementation AndroidX.Lifecycle.lcyExt
+    implementation AndroidX.recyclerView
+    implementation AndroidX.exifinterface
+    implementation ThirdLib.MmkvStatic.mmkvStatic
+    implementation ThirdLib.Relinker.relinker
+    implementation ThirdLib.Easypermissions.easypermissions
+    implementation ThirdLib.Arouter.arouterApi
+    kapt ThirdLib.Arouter.arouterCompiler
+    implementation ThirdLib.Lottie.lottie
+    implementation Google.gson
+    implementation AndroidX.appcompat
+    implementation ThirdLib.Okhttp3.retrofit
+    implementation ThirdLib.Okhttp3.converterCalars
+    implementation ThirdLib.Okhttp3.retrofitConverterGson
+    implementation ThirdLib.Okhttp3.adapterRxjava
+    implementation ThirdLib.Okhttp3.adapterRxjava2
+    implementation ThirdLib.Okhttp3.okhttp3
 
 }
 
@@ -138,7 +101,7 @@ configurations.all { //循环一个个的依赖库
             }
         }
         if (requested.group == 'androidx.annotation:annotation:1.0.0') {
-//如果这个依赖库群组的名字是com.android.support
+            //如果这个依赖库群组的名字是com.android.support
             details.useVersion '1.1.0'//这里指定需要统一的依赖版本
         }
     }
