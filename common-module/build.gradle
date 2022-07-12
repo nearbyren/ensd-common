@@ -50,11 +50,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = '1.8'
     }
 }
 
@@ -95,19 +95,19 @@ dependencies {
     api ThirdLib.Timber.timber
     api ThirdLib.Rxjava.rxjava
     api ThirdLib.Rxjava.rxandroid
-    api ThirdLib.Okhttp3.adapter_rxjava2
     api ThirdLib.Smarttablayout.smarttablayout
     api ThirdLib.Smarttablayout.smarttablayout_utils
-    api "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
     api ThirdLib.Okhttp3.retrofit
     api ThirdLib.Okhttp3.retrofit_converter_gson
     api ThirdLib.Okhttp3.converter_calars
     api ThirdLib.Okhttp3.adapter_rxjava2
+    api ThirdLib.Okhttp3.adapter_rxjava
     api ThirdLib.Okhttp3.okhttp3
     api ThirdLib.Lottie.lottie
     api ThirdLib.Easypermissions.easypermissions
     api ThirdLib.MmkvStatic.mmkvStatic
     api ThirdLib.Relinker.relinker
+
     implementation 'com.github.nearbyren:ensd-uikit:1.1.1'
 
 }

@@ -13,8 +13,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.R
-import ejiayou.common.module.setbar.StatusBarUtils
-import ejiayou.common.module.setbar.StatusBarUtils2
 import ejiayou.common.module.view.empty.PageStateLayout
 
 class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
@@ -224,8 +222,6 @@ class ToolBarHelperKot @JvmOverloads constructor(builder: Builder) {
 
         fun setStatusBarTintResource(statusBarTintResource: Int): Builder {
             this.statusBarTintResource = statusBarTintResource
-            StatusBarUtils.setStatusBar(activity, false, false, statusBarTintResource)
-            StatusBarUtils2.setStatusTextColor(true, activity)
             return this
         }
 
