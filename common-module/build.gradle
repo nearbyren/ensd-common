@@ -56,12 +56,13 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.nearbyren:ensd-uikit:1.1.4'
+    implementation 'com.github.nearbyren:ensd-uikit:1.1.6'
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
     api AndroidX.multidex
     api AndroidX.coreKtx
+    api AndroidX.appcompat
     api AndroidX.lifecycleRuntimeKtx
     api ThirdLib.KotlinStdlib.kotlinStdlib
     api AndroidX.Navigation.kotCorAnd
@@ -81,7 +82,6 @@ dependencies {
     api ThirdLib.Rxjava.rxandroid
     api ThirdLib.Rxjava.rxbinding2
     api Google.gson
-    api AndroidX.appcompat
     api ThirdLib.Okhttp3.retrofit
     api ThirdLib.Okhttp3.converterCalars
     api ThirdLib.Okhttp3.retrofitConverterGson
