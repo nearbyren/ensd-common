@@ -56,10 +56,10 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.nearbyren:ensd-uikit:1.1.6'
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
+    api 'com.github.nearbyren:ensd-uikit:1.1.6'
     api AndroidX.multidex
     api AndroidX.coreKtx
     api AndroidX.appcompat
