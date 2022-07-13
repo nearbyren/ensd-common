@@ -15,8 +15,7 @@
         android:layout_height="50dp"
         android:layout_margin="0dp"
         android:minHeight="?android:attr/actionBarSize"
-        android:padding="0dp"
-        app:layout_scrollFlags="scroll|enterAlways">
+        android:padding="0dp">
 
         <RelativeLayout
             android:id="@+id/ensd_rl_title"

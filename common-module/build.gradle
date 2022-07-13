@@ -70,6 +70,7 @@ dependencies {
     api AndroidX.Lifecycle.viewModelKtx
     api AndroidX.Lifecycle.lcyExt
     api AndroidX.recyclerView
+    api AndroidX.cardview
     api AndroidX.exifinterface
     api ThirdLib.MmkvStatic.mmkvStatic
     api ThirdLib.Relinker.relinker
