@@ -62,7 +62,6 @@ dependencies {
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
     api 'com.github.nearbyren:ensd-uikit:1.1.7'
-    api project(':lib-resource')
     api AndroidX.multidex
     api AndroidX.coreKtx
     api AndroidX.appcompat
