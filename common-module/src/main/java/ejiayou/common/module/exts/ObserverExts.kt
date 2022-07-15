@@ -5,9 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/9 7:41 PM
  * @description: Obserser相关的扩展
  * @since: 1.0.0
  */

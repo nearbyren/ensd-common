@@ -1,9 +1,6 @@
 package ejiayou.common.module.api.response
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/8/14 7:06 PM
  * @description: 成功的网络请求返回的数据模型
  * @since: 1.0.0
  */

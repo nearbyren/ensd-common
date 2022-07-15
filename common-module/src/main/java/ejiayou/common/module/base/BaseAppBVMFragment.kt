@@ -6,9 +6,6 @@ import ejiayou.common.module.mvvm.BaseBVMFragment
 import ejiayou.common.module.mvvm.BaseViewModel
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/9/3 4:18 下午
  * @description: -
  * @since: 1.0.0
  */

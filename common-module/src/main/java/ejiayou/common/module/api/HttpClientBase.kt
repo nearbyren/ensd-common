@@ -10,9 +10,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/8/19 5:21 PM
  * @description: Http客户端基底
  * @since: 1.0.0
  */

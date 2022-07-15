@@ -4,9 +4,6 @@ import okhttp3.Interceptor
 import okhttp3.Response
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/8/8 10:57 下午
  * @description: 请求头部拦截器
  * @since: 1.0.0
  */

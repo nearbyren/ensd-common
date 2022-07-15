@@ -1,7 +1,7 @@
 package ejiayou.common
 
 import android.app.Application
-import ejiayou.common.module.http.FlyHttp
+import ejiayou.common.module.http.CorHttp
 
 /**
  * @author:
@@ -11,6 +11,6 @@ import ejiayou.common.module.http.FlyHttp
 class app : Application() {
     override fun onCreate() {
         super.onCreate()
-        FlyHttp.getInstance().init(this)
+        CorHttp.getInstance().init(this)
     }
 }

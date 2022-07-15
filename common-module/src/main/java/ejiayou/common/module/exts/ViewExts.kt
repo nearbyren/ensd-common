@@ -3,9 +3,6 @@ package ejiayou.common.module.exts
 import android.view.View
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/7 5:32 PM
  * @description: View相关扩展
  * @since: 1.0.0
  */

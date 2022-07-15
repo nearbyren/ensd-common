@@ -4,9 +4,6 @@ import com.google.gson.GsonBuilder
 import java.lang.reflect.Type
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/21 4:58 下午
  * @description: Gson工具类
  * @since: 1.0.0
  */

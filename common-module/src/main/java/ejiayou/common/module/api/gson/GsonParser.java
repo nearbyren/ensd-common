@@ -7,9 +7,6 @@ import com.google.gson.reflect.TypeToken;
 import java.util.Map;
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/9/15 3:13 下午
  * @description: -
  * @since: 1.0.0
  */

@@ -5,9 +5,6 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/10/27 3:26 PM
  * @description: BigDeciaml相关扩展
  * @since: 1.0.0
  */

@@ -5,9 +5,6 @@ import androidx.lifecycle.Observer
 import ejiayou.common.module.signal.livebus.LiveBus
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/19 7:52 下午
  * @description: 倒计时工具类
  * @since: 1.0.0
  */

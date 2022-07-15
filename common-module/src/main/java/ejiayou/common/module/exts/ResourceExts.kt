@@ -6,9 +6,6 @@ import androidx.annotation.*
 import androidx.core.content.ContextCompat
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/7/3 5:11 PM
  * @description: 资源相关
  * @since: 1.0.0
  */

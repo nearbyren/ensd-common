@@ -10,9 +10,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/20 7:10 下午
  * @description: Span相关
  * @since: 1.0.0
  */

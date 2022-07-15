@@ -3,9 +3,6 @@ package ejiayou.common.module.utils.countdown
 import android.os.Handler
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/19 11:16 上午
  * @description: 倒计时
  * @since: 1.0.0
  */

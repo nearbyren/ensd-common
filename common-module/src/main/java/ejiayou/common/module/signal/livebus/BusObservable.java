@@ -5,9 +5,6 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/2 4:04 PM
  * @description: LiveBus的被观察者
  * @since: 1.0.0
  */

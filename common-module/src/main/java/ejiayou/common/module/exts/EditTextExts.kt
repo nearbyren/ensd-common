@@ -7,9 +7,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/7 9:17 PM
  * @description: EditText的扩展
  * @since: 1.0.0
  */

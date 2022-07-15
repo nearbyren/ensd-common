@@ -9,9 +9,6 @@ import ejiayou.common.module.databinding.CommonDialogLoadingBinding
 import ejiayou.uikit.module.dialog.BaseBindDialogFragment
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/9/6 7:29 下午
  * @description: 加载弹框
  * @since: 1.0.0
  */
@@ -23,7 +20,7 @@ class LoadingDialog : BaseBindDialogFragment<CommonDialogLoadingBinding>() {
     }
 
     override fun getDialogTheme(): Int {
-        return R.style.fly_uikit_TransparentDialog
+        return R.style.lib_uikit_TransparentDialog
     }
 
     override fun getLayoutId(): Int {

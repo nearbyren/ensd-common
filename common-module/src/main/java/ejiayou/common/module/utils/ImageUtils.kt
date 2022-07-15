@@ -18,9 +18,6 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/28 5:53 下午
  * @description: 图片相关工具类
  * @since: 1.0.0
  */

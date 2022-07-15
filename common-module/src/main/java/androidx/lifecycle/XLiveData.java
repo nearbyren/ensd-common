@@ -9,9 +9,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/2 4:44 PM
  * @description: 修改LiveData的活跃状态标准，把默认的 STARTED 改为 CREATED
  * @since: 1.0.0
  */

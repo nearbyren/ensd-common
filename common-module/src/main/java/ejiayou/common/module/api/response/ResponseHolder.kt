@@ -1,9 +1,6 @@
 package ejiayou.common.module.api.response
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/8/20 11:06 AM
  * @description: 网络请求响应解析后返回的对象（成功或者异常都会返回）
  * @since: 1.0.0
  */

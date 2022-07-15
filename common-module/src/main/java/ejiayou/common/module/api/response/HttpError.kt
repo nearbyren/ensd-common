@@ -1,9 +1,6 @@
 package ejiayou.common.module.api.response
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/23 5:31 PM
  * @description: 解析后的网络请求异常信息类
  * @since: 1.0.0
  */

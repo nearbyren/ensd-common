@@ -6,9 +6,6 @@ import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/9/6 6:41 下午
  * @description: -
  * @since: 1.0.0
  */

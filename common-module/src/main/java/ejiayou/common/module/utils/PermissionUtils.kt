@@ -7,9 +7,6 @@ import pub.devrel.easypermissions.EasyPermissions
 import pub.devrel.easypermissions.PermissionRequest
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/11/10 6:31 PM
  * @description: 权限管理工具类封装
  * @since: 1.0.0
  */

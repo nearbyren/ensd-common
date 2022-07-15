@@ -13,9 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/9/14 9:26 下午
  * @description: 解决Map解析时，int转double的问题
  * @since: 1.0.0
  */

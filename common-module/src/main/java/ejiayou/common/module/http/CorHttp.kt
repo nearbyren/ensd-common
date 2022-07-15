@@ -12,26 +12,23 @@ import java.io.File
 import java.lang.reflect.Type
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/3/19 8:10 PM
  * @description: -
  * @since: 1.0.0
  */
-class FlyHttp {
+class CorHttp {
     private val httClient by lazy { HttpClient() }
-    private val LOG_TAG = "FlyHttp>>>"
+    private val LOG_TAG = "CorHttp>>>"
     private val LOG_DIVIDER = "||================================================================="
 
     companion object {
 
         @Volatile
-        private var instance: FlyHttp? = null
+        private var instance: CorHttp? = null
 
         @JvmStatic
         fun getInstance() =
             instance ?: synchronized(this) {
-                instance ?: FlyHttp().also { instance = it }
+                instance ?: CorHttp().also { instance = it }
             }
     }
 

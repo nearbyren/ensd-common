@@ -3,15 +3,12 @@ package ejiayou.common.module.api
 import android.util.Log
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/8/8 1:16 下午
  * @description: Log工具类
  * @since: 1.0.0
  */
 object HLog {
     @JvmField
-    var tag = "fly-android"
+    var tag = "log-android"
 
     @JvmField
     var isDebug = true

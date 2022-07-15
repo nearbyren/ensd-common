@@ -1,9 +1,6 @@
 package ejiayou.common.module.utils
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/28 6:42 PM
  * @description: 点击限制的工具类
  * @since: 1.0.0
  */

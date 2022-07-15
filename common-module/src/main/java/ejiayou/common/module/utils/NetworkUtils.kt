@@ -17,9 +17,6 @@ import java.net.SocketException
 import java.util.*
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/21 5:21 下午
  * @description: 网络相关工具类
  * @since: 1.0.0
  */

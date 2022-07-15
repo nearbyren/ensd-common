@@ -19,9 +19,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/2 3:43 PM
  * @description: 基于LiveData的事件总线核心类
  * @since: 1.0.0
  */

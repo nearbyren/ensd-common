@@ -10,9 +10,6 @@ import androidx.annotation.RequiresPermission
 import java.util.*
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/21 9:52 下午
  * @description: 网络变化的广播接收器
  * @since: 1.0.0
  */

@@ -16,9 +16,6 @@ import androidx.annotation.RequiresApi
 import androidx.annotation.RequiresPermission
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/23 10:11 上午
  * @description: -
  * @since: 1.0.0
  */

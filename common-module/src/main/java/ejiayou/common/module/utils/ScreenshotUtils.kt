@@ -15,9 +15,6 @@ import androidx.core.graphics.createBitmap
 import androidx.recyclerview.widget.RecyclerView
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/26 5:01 下午
  * @description: 截图相关工具类
  * @since: 1.0.0
  */

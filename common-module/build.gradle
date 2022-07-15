@@ -1,7 +1,7 @@
 import ejiayou.composing.builds.AndroidX
 import ejiayou.composing.builds.Google
-import ejiayou.composing.builds.ThirdLib
 import ejiayou.composing.builds.Testing
+import ejiayou.composing.builds.ThirdLib
 
 plugins {
     id 'com.android.library'
@@ -36,22 +36,24 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
-    dataBinding {
-        enabled = true
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 }
 
@@ -59,12 +61,13 @@ dependencies {
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
-    api 'com.github.nearbyren:ensd-uikit:1.1.6'
+    api 'com.github.nearbyren:ensd-uikit:1.1.7'
+    api project(':lib-resource')
     api AndroidX.multidex
     api AndroidX.coreKtx
     api AndroidX.appcompat
     api AndroidX.lifecycleRuntimeKtx
-    api ThirdLib.KotlinStdlib.kotlinStdlib
+    api Google.gson
     api AndroidX.Navigation.kotCorAnd
     api AndroidX.Lifecycle.liveDataKtx
     api AndroidX.Lifecycle.viewModelKtx
@@ -72,6 +75,7 @@ dependencies {
     api AndroidX.recyclerView
     api AndroidX.cardview
     api AndroidX.exifinterface
+    api ThirdLib.KotlinStdlib.kotlinStdlib
     api ThirdLib.MmkvStatic.mmkvStatic
     api ThirdLib.Relinker.relinker
     api ThirdLib.Easypermissions.easypermissions
@@ -82,14 +86,12 @@ dependencies {
     api ThirdLib.Timber.timber
     api ThirdLib.Rxjava.rxandroid
     api ThirdLib.Rxjava.rxbinding2
-    api Google.gson
     api ThirdLib.Okhttp3.retrofit
     api ThirdLib.Okhttp3.converterCalars
     api ThirdLib.Okhttp3.retrofitConverterGson
     api ThirdLib.Okhttp3.adapterRxjava
     api ThirdLib.Okhttp3.adapterRxjava2
     api ThirdLib.Okhttp3.okhttp3
-
 }
 
 configurations.all { //循环一个个的依赖库

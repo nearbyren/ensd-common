@@ -17,12 +17,17 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0"
         //JitPack 步骤一
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'com.github.nearbyren:ensd-composing-builds:1.1.8'
+        classpath 'com.github.nearbyren:ensd-composing-builds:1.2.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-
+//如果要测试本地插件,记得在这里打开下面的开关，手动导入插件
+//apply false代表此插件仅应用于构建中的部分或全部子model, 而不是root项目
+//如果要在项目中手动使用独立项目定义的插件,需要在这里进入导入
+//plugins {
+//    id "ejiayou.composing.builds" apply false
+//}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

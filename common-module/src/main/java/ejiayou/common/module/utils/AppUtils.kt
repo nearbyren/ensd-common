@@ -9,9 +9,6 @@ import android.content.pm.PackageManager
 import android.os.Build
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/20 5:08 下午
  * @description: App工具类
  * @since: 1.0.0
  */

@@ -7,9 +7,6 @@ import android.os.Build
 import android.view.WindowManager
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/7/21 3:41 下午
  * @description: 屏幕相关工具类
  * @since: 1.0.0
  */

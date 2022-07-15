@@ -6,9 +6,6 @@ import android.view.View
 import android.widget.Toast
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/8/16 2:52 下午
  * @description: Toast相关工具类
  * @since: 1.0.0
  */

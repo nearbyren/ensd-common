@@ -6,9 +6,6 @@ import retrofit2.Response
 import retrofit2.http.*
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/8/8 11:39 上午
  * @description: 通用的请求Service
  * @since: 1.0.0
  */

@@ -9,9 +9,6 @@ import java.text.DecimalFormatSymbols
 import java.util.*
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/30 3:41 PM
  * @description: 数字相关工具类
  * @since: 1.0.0
  */

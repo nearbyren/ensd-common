@@ -7,9 +7,6 @@ import com.tencent.mmkv.MMKV
 import java.util.*
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/5/29 10:34 PM
  * @description: 本地缓存
  * @since: 1.0.0
  */

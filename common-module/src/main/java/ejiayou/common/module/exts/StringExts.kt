@@ -4,9 +4,6 @@ import ejiayou.common.module.utils.NumberUtils
 import java.math.RoundingMode
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/9/24 8:05 下午
  * @description: String相关扩展
  * @since: 1.0.0
  */

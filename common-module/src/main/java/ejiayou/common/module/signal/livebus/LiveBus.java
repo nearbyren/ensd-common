@@ -3,9 +3,6 @@ package ejiayou.common.module.signal.livebus;
 import androidx.annotation.NonNull;
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2020/6/5 10:57 AM
  * @description: --
  * @since: 1.0.0
  */

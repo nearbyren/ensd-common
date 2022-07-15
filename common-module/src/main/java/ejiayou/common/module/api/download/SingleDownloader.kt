@@ -7,9 +7,6 @@ import java.io.FileOutputStream
 import java.util.concurrent.CancellationException
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/8/12 2:22 下午
  * @description: 单文件下载器
  * @since: 1.0.0
  */

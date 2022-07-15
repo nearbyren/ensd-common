@@ -10,9 +10,6 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
- * @author: Albert Li
- * @contact: albertlii@163.com
- * @time: 2021/8/8 5:00 下午
  * @description: 网络请求客户端配置类
  * @since: 1.0.0
  */
