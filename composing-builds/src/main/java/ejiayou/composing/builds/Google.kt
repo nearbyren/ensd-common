@@ -7,7 +7,7 @@ package ejiayou.composing.builds
  */
 
 object Google {
-    const val material = "com.google.android.material:material:1.5.0"
+    const val material = "com.google.android.material:material:1.4.0"
     const val gson = "com.google.code.gson:gson:2.8.8"
 
 }
