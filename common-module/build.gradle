@@ -61,12 +61,13 @@ dependencies {
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
-    api 'com.github.nearbyren:ensd-uikit:1.1.8'
+    api 'com.github.nearbyren:ensd-uikit:1.1.9'
+    api Google.material
+    api Google.gson
     api AndroidX.multidex
     api AndroidX.coreKtx
     api AndroidX.appcompat
     api AndroidX.lifecycleRuntimeKtx
-    api Google.gson
     api AndroidX.Navigation.kotCorAnd
     api AndroidX.Lifecycle.liveDataKtx
     api AndroidX.Lifecycle.viewModelKtx
@@ -78,8 +79,6 @@ dependencies {
     api ThirdLib.MmkvStatic.mmkvStatic
     api ThirdLib.Relinker.relinker
     api ThirdLib.Easypermissions.easypermissions
-//    api ThirdLib.Arouter.arouterApi
-//    kapt ThirdLib.Arouter.arouterCompiler
     api ThirdLib.Lottie.lottie
     api ThirdLib.Logger.logger
     api ThirdLib.Timber.timber
@@ -91,6 +90,8 @@ dependencies {
     api ThirdLib.Okhttp3.adapterRxjava
     api ThirdLib.Okhttp3.adapterRxjava2
     api ThirdLib.Okhttp3.okhttp3
+//  api ThirdLib.Arouter.arouterApi
+//  kapt ThirdLib.Arouter.arouterCompiler
 }
 
 configurations.all { //循环一个个的依赖库
