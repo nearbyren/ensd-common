@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import com.alibaba.android.arouter.launcher.ARouter
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.mvvm.ToastEvent
 import ejiayou.common.module.mvvm.ViewBehavior
@@ -26,6 +27,7 @@ abstract class BaseActivityKot : AppCompatActivity(), ToolBarHelperKot.OnBackLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Logger.d("onCreate")
+        ARouter.getInstance().inject(this)
         initIntent()
         initContentView()
         initViewHeader()
