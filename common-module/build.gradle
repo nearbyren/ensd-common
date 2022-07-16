@@ -12,6 +12,13 @@ plugins {
     id 'kotlin-kapt'
 
 }
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
 afterEvaluate {
     publishing {
         publications {
@@ -90,8 +97,8 @@ dependencies {
     api ThirdLib.Okhttp3.adapterRxjava
     api ThirdLib.Okhttp3.adapterRxjava2
     api ThirdLib.Okhttp3.okhttp3
-//  api ThirdLib.Arouter.arouterApi
-//  kapt ThirdLib.Arouter.arouterCompiler
+    api ThirdLib.Arouter.arouterApi
+    kapt ThirdLib.Arouter.arouterCompiler
 }
 
 configurations.all { //循环一个个的依赖库
