@@ -12,6 +12,7 @@ plugins {
     id 'kotlin-kapt'
 
 }
+
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
@@ -67,13 +68,12 @@ dependencies {
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
-    api 'com.github.nearbyren:ensd-uikit:1.1.9'
-    api Google.material
-    api Google.gson
+    api 'com.github.nearbyren:ensd-uikit:1.2.0'
     api AndroidX.multidex
     api AndroidX.coreKtx
     api AndroidX.appcompat
     api AndroidX.lifecycleRuntimeKtx
+    api ThirdLib.KotlinStdlib.kotlinStdlib
     api AndroidX.Navigation.kotCorAnd
     api AndroidX.Lifecycle.liveDataKtx
     api AndroidX.Lifecycle.viewModelKtx
@@ -81,38 +81,56 @@ dependencies {
     api AndroidX.recyclerView
     api AndroidX.cardview
     api AndroidX.exifinterface
-    api ThirdLib.KotlinStdlib.kotlinStdlib
     api ThirdLib.MmkvStatic.mmkvStatic
     api ThirdLib.Relinker.relinker
-    api ThirdLib.Easypermissions.easypermissions
-    api ThirdLib.Lottie.lottie
+    api ThirdLib.Arouter.arouterApi
     api ThirdLib.Logger.logger
     api ThirdLib.Timber.timber
     api ThirdLib.Rxjava.rxandroid
     api ThirdLib.Rxjava.rxbinding2
+    api Google.gson
     api ThirdLib.Okhttp3.retrofit
     api ThirdLib.Okhttp3.converterCalars
     api ThirdLib.Okhttp3.retrofitConverterGson
     api ThirdLib.Okhttp3.adapterRxjava
     api ThirdLib.Okhttp3.adapterRxjava2
     api ThirdLib.Okhttp3.okhttp3
+    api ThirdLib.Smarttablayout.smarttablayout
+    api ThirdLib.Smarttablayout.smarttablayoutUtils
+    api ThirdLib.Glide.glide
+    api ThirdLib.Glide.glideCompiler
+    api ThirdLib.Lottie.lottie
+    api ThirdLib.Easypermissions.easypermissions
+    api ThirdLib.ChannelHelper.helper
+    api ThirdLib.Eventbus.eventbus
+    api ThirdLib.Autosize.autosize
+    api ThirdLib.Fastjson.fastjson
+    api ThirdLib.Immersionbar.immersionbar
+    api ThirdLib.AlignTextView.alignTextView
+    api ThirdLib.LabelsView.labelsView
+    api ThirdLib.Refresh.refreshLayoutKernel
+    api ThirdLib.MagicIndicator.magicIndicator
+    api ThirdLib.Permissionx.permissionx
+    api ThirdLib.Sketch.sketch
+    api ThirdLib.Sketch.sketchGif
     api ThirdLib.Arouter.arouterApi
     kapt ThirdLib.Arouter.arouterCompiler
+
 }
 
-//configurations.all { //循环一个个的依赖库
-//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+configurations.all { //循环一个个的依赖库
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
 //        def requested = details.requested //获取当前循环到的依赖库
 //        println("vale ="+requested)
 //        println("vale 2 ="+requested.name)
-//        if (requested.group == 'com.android.support') {//如果这个依赖库群组的名字是com.android.support
-//            if (!requested.name.startsWith("multidex")) { //且其名字不是以multidex开头的
-//                details.useVersion '28.0.0'//这里指定需要统一的依赖版本
-//            }
-//        }
-//        if (requested.group == 'androidx.annotation:annotation:1.0.0') {
-//            //如果这个依赖库群组的名字是com.android.support
-//            details.useVersion '1.0.0'//这里指定需要统一的依赖版本
-//        }
-//    }
-//}
+        if (requested.group == 'com.android.support') {//如果这个依赖库群组的名字是com.android.support
+            if (!requested.name.startsWith("multidex")) { //且其名字不是以multidex开头的
+                details.useVersion '28.0.0'//这里指定需要统一的依赖版本
+            }
+        }
+        if (requested.group == 'androidx.annotation:annotation:1.0.0') {
+            //如果这个依赖库群组的名字是com.android.support
+            details.useVersion '1.1.0'//这里指定需要统一的依赖版本
+        }
+    }
+}
