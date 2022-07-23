@@ -121,13 +121,18 @@ dependencies {
 configurations.all { //循环一个个的依赖库
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         def requested = details.requested //获取当前循环到的依赖库
-        println("冲突包解决 requested = " + requested.group)
-        println("冲突包解决 name = " + requested.name)
-        if (requested.group == 'androidx.annotation') {//如果这个依赖库群组的名字是com.android.support
-            println("冲突包解决匹配 进来了 = ")
-            if (requested.name.startsWith("annotation")) {
-                println("冲突包解决匹配 又进来了 = ")
-                details.useVersion '1.1.0'//这里指定需要统一的依赖版本
+        if (requested.group == 'androidx.databinding') {//如果这个依赖库群组的名字是com.android.support
+            if (requested.name.startsWith("databinding-adapters")) {
+                details.useVersion '4.2.2'//这里指定需要统一的依赖版本
+            }
+            if (requested.name.startsWith("viewbinding")) {
+                details.useVersion '4.2.2'//这里指定需要统一的依赖版本
+            }
+            if (requested.name.startsWith("databinding-runtime")) {
+                details.useVersion '4.2.2'//这里指定需要统一的依赖版本
+            }
+            if (requested.name.startsWith("databinding-common")) {
+                details.useVersion '4.2.2'//这里指定需要统一的依赖版本
             }
         }
     }

@@ -11,17 +11,41 @@ import androidx.fragment.app.Fragment
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.mvvm.ToastEvent
 import ejiayou.common.module.mvvm.ViewBehavior
+import ejiayou.common.module.ui.BarHelperConfig
+import ejiayou.common.module.ui.ImmersionBarConfig
 import ejiayou.common.module.utils.ToastUtils
 
 
-abstract class BaseLazyLoadFragmentKot : BaseLazyLoadFragmentTitleKot(),
-    ViewBehavior {
+abstract class BaseLazyLoadFragmentKot : BaseLazyLoadFragmentTitleKot(), ViewBehavior {
 
-    protected var toolBarBuilder: ToolBarHelperKot.Builder? = null
+    protected open fun initBarHelperConfig(): BarHelperConfig? {
+        return BarHelperConfig.builder().build()
+
+    }
+
+    protected open fun initImmersionBarConfig(): ImmersionBarConfig? {
+        return ImmersionBarConfig.builder().build()
+    }
 
     protected fun initViewHeader(view: View?) {
-        toolBarBuilder = ToolBarHelperKot.Builder(requireActivity() as BaseActivityKot)
-        toolBarBuilder!!.setFragmentView(view)
+        //标题栏适配器
+        var barHelper = ToolBarHelperUtil.builder()
+        //标题栏config
+        var barHelperConfig = initBarHelperConfig()
+        barHelperConfig!!.activity = requireActivity() as BaseActivityKot
+        barHelperConfig!!.fragmentView = view
+        //沉浸式config
+        var immersionBarConfig = initImmersionBarConfig()
+
+        barHelperConfig?.let {
+            barHelper.setBarHelperConfig(barHelperConfig)
+        }
+
+        immersionBarConfig?.let {
+            barHelper.setImmersionBarConfig(immersionBarConfig)
+        }
+        barHelper.build().init()
+
     }
 
 
@@ -60,10 +84,10 @@ abstract class BaseLazyLoadFragmentKot : BaseLazyLoadFragmentTitleKot(),
             return it
         }
         rootView = inflater.inflate(layoutRes(), container, false)
-        initViewHeader(rootView)
         initialize(savedInstanceState)
         return rootView
     }
+
 
     protected fun getRootView(): View? {
         return rootView
@@ -71,6 +95,7 @@ abstract class BaseLazyLoadFragmentKot : BaseLazyLoadFragmentTitleKot(),
 
     protected fun setRootView(view: View) {
         this.rootView = view
+        initViewHeader(view)
     }
 
     /**

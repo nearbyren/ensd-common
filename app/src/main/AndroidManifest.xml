@@ -3,14 +3,16 @@
     package="ejiayou.common">
 
     <application
-        android:name="app"
+        android:name="CommonApp"
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:supportsRtl="true">
+        android:resizeableActivity="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:taskAffinity="">
 
             <intent-filter>
@@ -20,6 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name=".TestActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="">
 
+        </activity>
+    </application>
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.2" />
 </manifest>

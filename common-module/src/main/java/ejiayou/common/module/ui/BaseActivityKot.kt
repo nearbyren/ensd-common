@@ -14,19 +14,20 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.mvvm.ToastEvent
 import ejiayou.common.module.mvvm.ViewBehavior
+import ejiayou.common.module.ui.BarHelperConfig
+import ejiayou.common.module.ui.ImmersionBarConfig
 import ejiayou.common.module.utils.ToastUtils
 
-abstract class BaseActivityKot : AppCompatActivity(), ToolBarHelperKot.OnBackListener,
-    ViewBehavior {
+abstract class BaseActivityKot : AppCompatActivity(), ViewBehavior {
 
-    protected var toolBarBuilder: ToolBarHelperKot.Builder? = null
+    private lateinit var barHelper: ToolBarHelperUtilBuilder
 
     protected val simpleBaseName: String get() = javaClass.simpleName
 
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Logger.d("onCreate")
+        Logger.d("监听生命周期 - onCreate")
         ARouter.getInstance().inject(this)
         initIntent()
         initContentView()
@@ -42,44 +43,68 @@ abstract class BaseActivityKot : AppCompatActivity(), ToolBarHelperKot.OnBackLis
     }
 
     open fun initIntent() {
-        Logger.d("initIntent")
+        Logger.d("监听生命周期 - initIntent")
     }
 
     override fun onStart() {
         super.onStart()
-        Logger.d("onStart")
+        Logger.d("监听生命周期 - onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Logger.d("onResume")
+        Logger.d("监听生命周期 - onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Logger.d("onPause")
+        Logger.d("监听生命周期 - onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Logger.d("onStop")
+        Logger.d("监听生命周期 - onStop")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Logger.d("onDestroy")
+        Logger.d("监听生命周期 - onDestroy")
+        barHelper?.let {
+            it.onDestroyImmersion()
+        }
+    }
+
+
+    protected open fun initBarHelperConfig(): BarHelperConfig? {
+        return BarHelperConfig.builder().build()
+
+    }
+
+    protected open fun initImmersionBarConfig(): ImmersionBarConfig? {
+        return ImmersionBarConfig.builder().build()
     }
 
 
     private fun initViewHeader() {
-        if (toolBarBuilder == null) {
-            toolBarBuilder = ToolBarHelperKot.Builder(this)
-            toolBarBuilder!!.setOnBackListener(this)
-        }
-    }
+        //标题栏适配器
+        barHelper = ToolBarHelperUtil.builder()
+        //沉浸式config
+        var immersionBarConfig = initImmersionBarConfig()
 
-    override fun onBackClick() {
-        finish()
+        immersionBarConfig?.let {
+            barHelper.setImmersionBarConfig(immersionBarConfig)
+        }
+
+        //标题栏config
+        var barHelperConfig = initBarHelperConfig()
+
+        barHelperConfig!!.activity = this
+
+        barHelperConfig?.let {
+            barHelper.setBarHelperConfig(barHelperConfig)
+        }
+        barHelper.build().init()
+
     }
 
 
